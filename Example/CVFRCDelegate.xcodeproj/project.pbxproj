@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		513FD8BF1E3FC8E300ADEC31 /* SampleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FD8BE1E3FC8E300ADEC31 /* SampleCollectionViewCell.swift */; };
+		513FD8C11E3FC8F200ADEC31 /* UtilityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FD8C01E3FC8F200ADEC31 /* UtilityExtensions.swift */; };
+		513FD8C41E3FC9F600ADEC31 /* Sample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 513FD8C21E3FC9F600ADEC31 /* Sample.xcdatamodeld */; };
+		513FD8C71E3FCA3800ADEC31 /* Sample+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FD8C51E3FCA3800ADEC31 /* Sample+CoreDataClass.swift */; };
+		513FD8C81E3FCA3800ADEC31 /* Sample+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FD8C61E3FCA3800ADEC31 /* Sample+CoreDataProperties.swift */; };
+		513FD8CA1E3FCB2600ADEC31 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513FD8C91E3FCB2600ADEC31 /* DataController.swift */; };
 		5FC2F89F6FDF1B5C3AFD0D69 /* Pods_CVFRCDelegate_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB324E764073C5DA725700E8 /* Pods_CVFRCDelegate_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -28,9 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02FFE5E42E04369C643C4854 /* Pods-CVFRCDelegate_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVFRCDelegate_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CVFRCDelegate_Example/Pods-CVFRCDelegate_Example.release.xcconfig"; sourceTree = "<group>"; };
-		16709F0581571FB8CBF97B12 /* Pods-CVFRCDelegate_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVFRCDelegate_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CVFRCDelegate_Tests/Pods-CVFRCDelegate_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		3C91DC7A148FEB279A8E8BDC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		0E4A0ADE21B57100F2B4AF4F /* Pods-CVFRCDelegate_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVFRCDelegate_Tests.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-CVFRCDelegate_Tests/Pods-CVFRCDelegate_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		3C91DC7A148FEB279A8E8BDC /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4D7B0DFE4A2C7D779B04F30C /* Pods-CVFRCDelegate_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVFRCDelegate_Example.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-CVFRCDelegate_Example/Pods-CVFRCDelegate_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		513FD8BE1E3FC8E300ADEC31 /* SampleCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleCollectionViewCell.swift; sourceTree = "<group>"; };
+		513FD8C01E3FC8F200ADEC31 /* UtilityExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityExtensions.swift; sourceTree = "<group>"; };
+		513FD8C31E3FC9F600ADEC31 /* Sample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sample.xcdatamodel; sourceTree = "<group>"; };
+		513FD8C51E3FCA3800ADEC31 /* Sample+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sample+CoreDataClass.swift"; sourceTree = "<group>"; };
+		513FD8C61E3FCA3800ADEC31 /* Sample+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sample+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		513FD8C91E3FCB2600ADEC31 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* CVFRCDelegate_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CVFRCDelegate_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,11 +53,11 @@
 		607FACE51AFB9204008FA782 /* CVFRCDelegate_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CVFRCDelegate_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		888ACAA6A1CD4B48E5F3195A /* CVFRCDelegate.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = CVFRCDelegate.podspec; path = ../CVFRCDelegate.podspec; sourceTree = "<group>"; };
+		888ACAA6A1CD4B48E5F3195A /* CVFRCDelegate.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CVFRCDelegate.podspec; path = ../CVFRCDelegate.podspec; sourceTree = "<group>"; };
 		899FC0E854630FD25564920E /* Pods_CVFRCDelegate_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVFRCDelegate_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8B69846DFE18E1761202354F /* Pods-CVFRCDelegate_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVFRCDelegate_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CVFRCDelegate_Example/Pods-CVFRCDelegate_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		B1799FFA073F3DC4FB07EF97 /* Pods-CVFRCDelegate_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVFRCDelegate_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CVFRCDelegate_Tests/Pods-CVFRCDelegate_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D16D09483167D36075CA3583 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B76F30027A9AED484E092B12 /* Pods-CVFRCDelegate_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVFRCDelegate_Example.release.xcconfig"; path = "../Pods/Target Support Files/Pods-CVFRCDelegate_Example/Pods-CVFRCDelegate_Example.release.xcconfig"; sourceTree = "<group>"; };
+		D16D09483167D36075CA3583 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		F95BADCAFE72EA204FA03D27 /* Pods-CVFRCDelegate_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CVFRCDelegate_Tests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-CVFRCDelegate_Tests/Pods-CVFRCDelegate_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		FB324E764073C5DA725700E8 /* Pods_CVFRCDelegate_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CVFRCDelegate_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -93,8 +105,14 @@
 		607FACD21AFB9204008FA782 /* Example for CVFRCDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				513FD8C51E3FCA3800ADEC31 /* Sample+CoreDataClass.swift */,
+				513FD8C61E3FCA3800ADEC31 /* Sample+CoreDataProperties.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				513FD8C91E3FCB2600ADEC31 /* DataController.swift */,
+				513FD8C21E3FC9F600ADEC31 /* Sample.xcdatamodeld */,
+				513FD8BE1E3FC8E300ADEC31 /* SampleCollectionViewCell.swift */,
+				513FD8C01E3FC8F200ADEC31 /* UtilityExtensions.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -142,10 +160,10 @@
 		A36E2A2035EEAF27E8F48D67 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8B69846DFE18E1761202354F /* Pods-CVFRCDelegate_Example.debug.xcconfig */,
-				02FFE5E42E04369C643C4854 /* Pods-CVFRCDelegate_Example.release.xcconfig */,
-				B1799FFA073F3DC4FB07EF97 /* Pods-CVFRCDelegate_Tests.debug.xcconfig */,
-				16709F0581571FB8CBF97B12 /* Pods-CVFRCDelegate_Tests.release.xcconfig */,
+				4D7B0DFE4A2C7D779B04F30C /* Pods-CVFRCDelegate_Example.debug.xcconfig */,
+				B76F30027A9AED484E092B12 /* Pods-CVFRCDelegate_Example.release.xcconfig */,
+				0E4A0ADE21B57100F2B4AF4F /* Pods-CVFRCDelegate_Tests.debug.xcconfig */,
+				F95BADCAFE72EA204FA03D27 /* Pods-CVFRCDelegate_Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -210,14 +228,16 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0820;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -289,7 +309,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CVFRCDelegate_Example/Pods-CVFRCDelegate_Example-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CVFRCDelegate_Example/Pods-CVFRCDelegate_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		97F86FFD7F6FD786ACD45C56 /* [CP] Check Pods Manifest.lock */ = {
@@ -319,7 +339,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CVFRCDelegate_Example/Pods-CVFRCDelegate_Example-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CVFRCDelegate_Example/Pods-CVFRCDelegate_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D706F2250DC134E7402A6AF2 /* [CP] Embed Pods Frameworks */ = {
@@ -334,7 +354,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CVFRCDelegate_Tests/Pods-CVFRCDelegate_Tests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CVFRCDelegate_Tests/Pods-CVFRCDelegate_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FEDB727D8D79D32C51A7DD9C /* [CP] Copy Pods Resources */ = {
@@ -349,7 +369,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CVFRCDelegate_Tests/Pods-CVFRCDelegate_Tests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/../Pods/Target Support Files/Pods-CVFRCDelegate_Tests/Pods-CVFRCDelegate_Tests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -360,7 +380,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				513FD8BF1E3FC8E300ADEC31 /* SampleCollectionViewCell.swift in Sources */,
+				513FD8C11E3FC8F200ADEC31 /* UtilityExtensions.swift in Sources */,
+				513FD8C71E3FCA3800ADEC31 /* Sample+CoreDataClass.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				513FD8CA1E3FCB2600ADEC31 /* DataController.swift in Sources */,
+				513FD8C41E3FC9F600ADEC31 /* Sample.xcdatamodeld in Sources */,
+				513FD8C81E3FCA3800ADEC31 /* Sample+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,8 +441,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -439,7 +467,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -460,8 +488,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -477,16 +507,17 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B69846DFE18E1761202354F /* Pods-CVFRCDelegate_Example.debug.xcconfig */;
+			baseConfigurationReference = 4D7B0DFE4A2C7D779B04F30C /* Pods-CVFRCDelegate_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CVFRCDelegate/Info.plist;
@@ -494,12 +525,13 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 02FFE5E42E04369C643C4854 /* Pods-CVFRCDelegate_Example.release.xcconfig */;
+			baseConfigurationReference = B76F30027A9AED484E092B12 /* Pods-CVFRCDelegate_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CVFRCDelegate/Info.plist;
@@ -507,12 +539,13 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1799FFA073F3DC4FB07EF97 /* Pods-CVFRCDelegate_Tests.debug.xcconfig */;
+			baseConfigurationReference = 0E4A0ADE21B57100F2B4AF4F /* Pods-CVFRCDelegate_Tests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -526,12 +559,13 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 16709F0581571FB8CBF97B12 /* Pods-CVFRCDelegate_Tests.release.xcconfig */;
+			baseConfigurationReference = F95BADCAFE72EA204FA03D27 /* Pods-CVFRCDelegate_Tests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -541,6 +575,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -575,6 +610,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		513FD8C21E3FC9F600ADEC31 /* Sample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				513FD8C31E3FC9F600ADEC31 /* Sample.xcdatamodel */,
+			);
+			currentVersion = 513FD8C31E3FC9F600ADEC31 /* Sample.xcdatamodel */;
+			path = Sample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }

@@ -1,0 +1,16 @@
+PODS:
+  - CVFRCDelegate (0.1.0)
+
+DEPENDENCIES:
+  - CVFRCDelegate (from `.`)
+
+EXTERNAL SOURCES:
+  CVFRCDelegate:
+    :path: .
+
+SPEC CHECKSUMS:
+  CVFRCDelegate: c8916367ddd3a07a8db97bb21183d29971d65d21
+
+PODFILE CHECKSUM: ea8ff673f7b5e088c1040fc627766e9abfa18bd1
+
+COCOAPODS: 1.2.0.beta.3

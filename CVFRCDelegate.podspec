@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'CVFRCDelegate'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of CVFRCDelegate.'
+  s.summary          = 'Fix for using UICollectionView with NSFetchedResultsController'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+If you've ever used NSFetchedResultsController with a UITableView, you know how awesome it can be. However try using it with a UICollectionView and you will inevitably find yourself facing heartache and frustration.
                        DESC
 
   s.homepage         = 'https://github.com/jzucker2/CVFRCDelegate'
@@ -26,7 +26,7 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jzucker2' => 'jordan.zucker@gmail.com' }
   s.source           = { :git => 'https://github.com/jzucker2/CVFRCDelegate.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/jzucker'
 
   s.ios.deployment_target = '8.0'
 
@@ -37,6 +37,6 @@ TODO: Add long description of the pod here.
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
+  s.frameworks = 'UIKit', 'CoreData'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
