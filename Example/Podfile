@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CVFRCDelegate_Example' do
+  pod 'CVFRCDelegate', :path => '../'
+
+  target 'CVFRCDelegate_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
