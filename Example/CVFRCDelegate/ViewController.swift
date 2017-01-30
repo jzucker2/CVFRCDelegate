@@ -8,18 +8,21 @@
 
 import UIKit
 import CoreData
+import CVFRCDelegate
 
-class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedResultsControllerDelegate {
+class ViewController: UIViewController, UICollectionViewDataSource {
     
     var collectionView: UICollectionView!
     
+    var fetchedResultsControllerDelegate: CVFRCDelegate!
+    
     lazy var fetchedResultsController: NSFetchedResultsController<Sample> = {
-        let mediaForRecipeFetchRequest: NSFetchRequest<Sample> = Sample.fetchRequest()
+        let sampleFetchRequest: NSFetchRequest<Sample> = Sample.fetchRequest()
         let creationDateSortDescriptor = NSSortDescriptor(key: #keyPath(Sample.creationDate), ascending: true)
-        mediaForRecipeFetchRequest.sortDescriptors = [creationDateSortDescriptor]
-        //        let creatingFetchedResultsController = NSFetchedResultsController(fetchRequest: allRecipesFetchRequest, managedObjectContext: UIApplication.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-        let creatingFetchedResultsController = NSFetchedResultsController(fetchRequest: mediaForRecipeFetchRequest, managedObjectContext: DataController.sharedController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
-        creatingFetchedResultsController.delegate = self
+        sampleFetchRequest.sortDescriptors = [creationDateSortDescriptor]
+        let creatingFetchedResultsController = NSFetchedResultsController(fetchRequest: sampleFetchRequest, managedObjectContext: DataController.sharedController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        self.fetchedResultsControllerDelegate = CVFRCDelegate(collectionView: self.collectionView)
+        creatingFetchedResultsController.delegate = self.fetchedResultsControllerDelegate
         return creatingFetchedResultsController
     }()
 
@@ -28,14 +31,77 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
         // Do any additional setup after loading the view, typically from a nib.
         let layout = UICollectionViewFlowLayout()
         collectionView = UICollectionView(frame: view.frame, collectionViewLayout: layout)
+        collectionView.backgroundColor = .cyan
         collectionView.register(SampleCollectionViewCell.self, forCellWithReuseIdentifier: SampleCollectionViewCell.reuseIdentifier())
         collectionView.dataSource = self
         view.addSubview(collectionView)
+        navigationItem.title = "Collection View FRC"
+        
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addSamplesButtonPressed(sender:)))
+        let removeButton = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(removeFiveSamplesButtonPressed(sender:)))
+        navigationItem.rightBarButtonItems = [addButton, removeButton]
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError(error.localizedDescription)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Actions
+    
+    func removeFiveSamplesButtonPressed(sender: UIBarButtonItem) {
+        DataController.sharedController.persistentContainer.performBackgroundTask { (context) in
+            defer {
+                if context.hasChanges {
+                    do {
+                        try context.save()
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            
+            let deleteInContext: (NSManagedObjectID) -> () = { (objectID) in
+                let actualSample = context.object(with: objectID)
+                context.delete(actualSample)
+            }
+            
+            guard let fetchedResults = self.fetchedResultsController.fetchedObjects else {
+                return
+            }
+            
+            guard fetchedResults.count >= 5 else {
+                self.fetchedResultsController.fetchedObjects?.forEach({ (item) in
+                    deleteInContext(item.objectID)
+                })
+                print("finish deleting everything")
+                return
+            }
+            
+            let samplesSlice = fetchedResults[0...5]
+            samplesSlice.forEach({ (sample) in
+                deleteInContext(sample.objectID)
+            })
+        }
+    }
+    
+    func addSamplesButtonPressed(sender: UIBarButtonItem) {
+        DataController.sharedController.persistentContainer.performBackgroundTask { (context) in
+            for i in 1...5 {
+                let createdSample = Sample(context: context)
+                createdSample.name = "Sample \(i)"
+            }
+            do {
+                try context.save()
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+        }
     }
         
     // MARK: - UICollectionViewDataSource
@@ -53,9 +119,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
             fatalError("wrong cell! \(indexPath)")
         }
         let item = fetchedResultsController.object(at: indexPath)
-        sampleCell.update(with: item)
-        
-        
+        sampleCell.update(with: item.name)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -63,49 +127,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, NSFetchedRes
             fatalError("wrong cell! \(indexPath)")
         }
         let item = fetchedResultsController.object(at: indexPath)
-        cell.update(with: item)
-//        if indexPath == movingIndexPath {
-//            cell.alpha = 0.7
-//            cell.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-//        } else {
-//            cell.alpha = 1.0
-//            cell.transform = CGAffineTransform.identity
-//        }
+        
+        DataController.sharedController.viewContext.performAndWait {
+            let formattedDate = DisplayDateFormatter.sharedFormatter.format(date: item.creationDate)
+            let updateText = "\(item.name!)\n Date: \(formattedDate!)"
+            cell.update(with: updateText)
+        }
         return cell
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        
-//        var view: UICollectionReusableView!
-//        switch kind {
-//        case UICollectionElementKindSectionHeader:
-//            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MediaCollectionHeaderView.reuseIdentifier(), for: indexPath) as? MediaCollectionHeaderView else {
-//                fatalError()
-//            }
-//            header.update(with: headerDisplayText, targetAction: (self, #selector(changeName)))
-//            view = header
-//        case UICollectionElementKindSectionFooter:
-//            guard let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: MediaCollectionFooterView.reuseIdentifier(), for: indexPath) as? MediaCollectionFooterView else {
-//                fatalError()
-//            }
-//            footer.update(with: addMediaTapGR)
-//            #if DEBUG
-//                footer.update(with: addMediaLongPressGR)
-//            #endif
-//            view = footer
-//        default:
-//            fatalError()
-//        }
-//        
-//        return view
-//    }
-    
-//    func collectionView(_ collectionView: UICollectionView, moveItemAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
-//        print("\(#function) sourceIndexPath: \(sourceIndexPath.debugDescription) destinationIndexPath: \(destinationIndexPath.debugDescription)")
-//        updateRecipeRankings()
-//        //        dataSource.moveItem(at: sourceIndexPath, to: destinationIndexPath)
-//    }
-    
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         guard let sections = fetchedResultsController.sections else {
