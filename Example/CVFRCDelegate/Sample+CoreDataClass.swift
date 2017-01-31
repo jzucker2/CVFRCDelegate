@@ -13,6 +13,19 @@ import CoreData
 @objc(Sample)
 public class Sample: NSManagedObject {
     
+    static func saveObject(title: String) {
+        DataController.sharedController.persistentContainer.performBackgroundTask({ (context) in
+            let createdSample = Sample(context: context)
+            createdSample.name = title
+            do {
+                try context.save()
+                print(#function)
+            } catch {
+                fatalError(error.localizedDescription)
+            }
+        })
+    }
+    
     public override func awakeFromInsert() {
         super.awakeFromInsert()
         uuid = UUID().uuidString
