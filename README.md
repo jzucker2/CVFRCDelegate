@@ -20,6 +20,10 @@ it, simply add the following line to your Podfile:
 pod "CVFRCDelegate"
 ```
 
+## Notes
+
+This [link](https://fangpenlin.com/posts/2016/04/29/uicollectionview-invalid-number-of-items-crash-issue/) is useful.
+
 ## Author
 
 jzucker2, jordan.zucker@gmail.com
