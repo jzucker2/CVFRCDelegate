@@ -72,6 +72,8 @@ class BreakViewController: UIViewController, UICollectionViewDataSource {
             fatalError(error.localizedDescription)
         }
         createTestObjectTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(createObjectTimerFired(timer:)), userInfo: nil, repeats: true)
+        print("\(#function) end with \(fetchedResultsController.fetchedObjects?.count)")
+        fetchedResultsControllerDelegate.itemCount = fetchedResultsController.fetchedObjects!.count
     }
     
     override func didReceiveMemoryWarning() {
@@ -134,11 +136,20 @@ class BreakViewController: UIViewController, UICollectionViewDataSource {
     // MARK: - UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let numberOfItems = fetchedResultsControllerDelegate.numberOfItemsIn(section: section)
+        print("***********************************************")
+        print("experiment: \(#function) section: \(section) numberOfItems: \(numberOfItems)")
+        
+        
         guard let sections = fetchedResultsController.sections else {
             fatalError("No sections in fetchedResultsController")
         }
         let sectionInfo = sections[section]
-        return sectionInfo.numberOfObjects
+        print("\(#function) section: \(section) numberOfItems: \(sectionInfo.numberOfObjects)")
+        print("***********************************************")
+//        return sectionInfo.numberOfObjects
+        
+        return numberOfItems
     }
     
     func configure(cell: UICollectionViewCell, indexPath: IndexPath) {
@@ -167,6 +178,7 @@ class BreakViewController: UIViewController, UICollectionViewDataSource {
         guard let sections = fetchedResultsController.sections else {
             fatalError("No sections in fetchedResultsController")
         }
+        print("\(#function) sections: \(sections.count)")
         return sections.count
     }
 
